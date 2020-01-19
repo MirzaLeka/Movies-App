@@ -1,5 +1,7 @@
 import App from './app';
+import Sealed from './decorators/sealed';
 
+@Sealed
 class Server {
 
   private port: string | number;
@@ -12,10 +14,9 @@ class Server {
   constructor() {
     this.port = process.env.PORT || 3000;    
     this.main();
-    this.start();
   }
 
-   private start() {
+   listen() {
     this.app.application.listen(this.port, () => 
       console.log(`Server started on port ${this.port}`)
     );
@@ -23,4 +24,4 @@ class Server {
 
 }
 
-new Server();
+new Server().listen();

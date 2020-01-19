@@ -23,7 +23,7 @@ export default class App {
 
   private controllers() {
     // const moviesController = new MoviesController();
-    // this.application.use('/api/movies', moviesController.router);
+    // this.application.use('/api/movies', require('./contollers/movies-controller'));
     this.application.get('/', (_, res: Response) => {
       res.send('Hello TS Node.js!');
     })

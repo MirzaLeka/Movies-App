@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express';
+const r = Router();
 
-export default class MoviesController {
+export class MoviesController {
 
   router: any;
 
@@ -10,7 +11,7 @@ export default class MoviesController {
   }
 
   movies() {
-    this.router.get('/api/movies', (req: Request, res: Response) => {
+    r.get('/api/movies', (req: Request, res: Response) => {
       res.status(200).json({
         id: 1,
         title: 'Iron Man',
@@ -22,4 +23,4 @@ export default class MoviesController {
 
 }
 
-// export default router;
+export default r;
